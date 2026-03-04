@@ -2,30 +2,30 @@ import { Home, Profile, SignIn, SignUp, Desain, Harga, HubungiKami, CariDomain }
 
 export const routes = [
   {
-    name: "home",
+    // name: "home",
     path: "/home",
     element: <Home />,
   },
-   {
-    name: "cari domain",
-    path: "/cari-domain",
-    element: <CariDomain />,
-  },
-  {
-    name: "cari desain",
-    path: "/desain",
-    element: <Desain />,
-  },
-  {
-    name: "harga",
-    path: "/harga",
-    element: <Harga />,
-  },
-  {
-    name: "hubungi kami",
-    path: "/hubungi-kami",
-    element: <HubungiKami />,
-  },
+  //  {
+  //   name: "cari domain",
+  //   path: "/cari-domain",
+  //   element: <CariDomain />,
+  // },
+  // {
+  //   name: "cari desain",
+  //   path: "/desain",
+  //   element: <Desain />,
+  // },
+  // {
+  //   name: "harga",
+  //   path: "/harga",
+  //   element: <Harga />,
+  // },
+  // {
+  //   name: "hubungi kami",
+  //   path: "/hubungi-kami",
+  //   element: <HubungiKami />,
+  // },
  
   // {
   //   name: "Sign In",

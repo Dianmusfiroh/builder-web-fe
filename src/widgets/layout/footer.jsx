@@ -5,7 +5,7 @@ const year = new Date().getFullYear();
 
 export function Footer({ title, description, socials, menus, copyright }) {
   return (
-    <footer className="bg-[#03045e] py-8 px-4">  
+    <footer className="bg-blue-900 py-8 px-4">  
       <div className="container mx-auto">
         <div className="flex flex-wrap pt-6 text-center lg:text-left">
           <div className="w-full px-4 lg:w-6/12">
@@ -29,7 +29,11 @@ export function Footer({ title, description, socials, menus, copyright }) {
                     className="rounded-full bg-white/10 text-white hover:bg-white/20"
                   >
                     <Typography color={color}>
-                      <i className={`fa-brands fa-${name}`} />
+                      {name === "@" ? (
+                        <span className="text-xl font-bold">@</span>
+                      ) : (
+                        <i className={`fa-brands fa-${name}`} />
+                      )}
                     </Typography>
                   </IconButton>
                 </a>

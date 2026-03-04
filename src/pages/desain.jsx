@@ -20,12 +20,7 @@ const designs = [
     description: "Layout produk dengan fokus pada visual.",
     category: "Product",
   },
-  {
-    title: "Team Showcase",
-    image: "/img/team-1.jpg",
-    description: "Desain halaman tim dan testimoni.",
-    category: "Team",
-  },
+ 
 ];
 
 export function Desain() {
@@ -40,7 +35,7 @@ export function Desain() {
     selected === "All" ? designs : designs.filter((d) => d.category === selected);
 
   return (
-    <div className="container mx-auto px-4  py-12">
+    <div className="container mx-auto px-4  ">
       <h2 className="text-3xl mt-20 font-bold mb-4">Kumpulan Desain</h2>
 
       <div className="mb-6 flex flex-wrap gap-2">

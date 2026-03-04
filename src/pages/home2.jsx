@@ -19,95 +19,104 @@ import { featuresData, teamData, contactData } from "@/data";
 export function Home() {
   return (
     <>
-      <div className="relative  flex  content-center items-center justify-center pt-32 pb-32">
-        <div className="absolute top-0 h-full w-full  bg-cover bg-center" />
-        <div className="absolute top-0 h-full w-full  bg-cover bg-center" />
+      <div className="relative flex h-screen content-center items-center justify-center pt-16 pb-32">
+        <div className="absolute top-0 h-full w-full bg-[url('/img/bluebackgorund.png')] bg-cover bg-center" />
+        <div className="absolute top-0 h-full w-full bg-black/60 bg-cover bg-center" />
         <div className="max-w-8xl container relative mx-auto">
           <div className="flex flex-wrap items-center">
-            <div className="ml-auto mr-auto w-full text-center ">
-              <Typography
-                variant="h4"
-                color="black"
-                className="mb-6 "
-              >
-                Website  Travel Umroh
-              </Typography>
+            <div className="ml-auto mr-auto w-full px-4 text-center lg:w-8/12">
               <Typography
                 variant="h1"
-                color="black"
-                className="font-black text-5xl lg:text-7xl px-8 py-2 w-full leading-loose"
+                color="white"
+                className="mb-6 font-black"
               >
-                Bangun Website Travel Umroh:
+                Bangun Website Travel Anda dengan Mudah dan Cepat
               </Typography>
-                <Typography
-                variant="h1"
-                color="black"
-                className="font-black text-5xl lg:text-7xl px-8 py-2 w-full leading-loose"
-              >
-                Dirancang Khusus untuk
+              <Typography variant="lead" color="white" className="opacity-80">
+                Solusi lengkap untuk membuat website travel yang profesional dan
+                menarik perhatian calon jamaah Anda.
               </Typography>
-              <Typography
-                variant="h1"
-                color="black"
-                className="font-black mb-5 text-5xl lg:text-7xl px-8 py-2 w-full leading-loose"
-              >
-                Mendapatkan Jamaah     
-              </Typography>
-              <Typography variant="lead" color="black" className="opacity-80">
-                Mulai dari Rp 300.000/bulan atau <br />
-                Rp 1.500.000/tahun
-              </Typography>
-              <CariDomain />
-
             </div>
-
           </div>
         </div>
       </div>
-      <div className="min-h-screen bg-gradient-to-t from-blue-50 to-white py-12 px-4">
-          <div className="flex items-center justify-center h-full">
-              <Typography
-                variant="h1"
-                color="black"
-                className="mx-1 font-black text-5xl lg:text-5xl text-center"
-              >
-                Temukan Desain 
-              </Typography>
-            
-              <Typography
-                variant="h1"
-                color="blue"
-                className="mx-1 font-blue text-5xl lg:text-5xl text-center"
-              >
-                Website Umroh
-              </Typography>
-              <Typography
-                variant="h1"
-                color="black"
-                className="mx-1 font-black text-5xl lg:text-5xl text-center"
-              >
-                Terbaikmu
-              </Typography>
-            </div>
-          <div className="flex flex-col items-center justify-center mt-5 h-full gap-1">
-              <Typography
-                variant="h5"
-                color="black"
-                className="text-center"
-              >
-                Template <span className="text-blue-600 font-bold">Website Travel Umroh</span> Dirancang Khusus sebagai Alat Akuisisi Jamaah:
-              </Typography>
-              <Typography
-                variant="h5"
-                color="black"
-                className=" text-center"
-              >
-              Companya Profile sekaligus Katalog Perjalanan
-              </Typography>
-              <Desain />
-              <Harga />
-
+     
+      <section className="-mt-32 bg-blue-50 px-0 pb-10 pt-4">
+        <div className="container mx-auto">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {featuresData.map(({ color, title, icon, description }) => (
+              <FeatureCard
+                key={title}
+                color={color}
+                title={title}
+                icon={React.createElement(icon, {
+                  className: "w-5 h-5 text-white",
+                })}
+                description={description}
+              />
+            ))}
           </div>
+          {/* <div className="mt-32 flex flex-wrap items-center">
+            <div className="mx-auto -mt-8 w-full px-4 md:w-5/12">
+              <div className="mb-6 inline-flex h-16 w-16 items-center justify-center rounded-full bg-blue-gray-900 p-2 text-center shadow-lg">
+                <FingerPrintIcon className="h-8 w-8 text-white " />
+              </div>
+              <Typography
+                variant="h3"
+                className="mb-3 font-bold"
+                color="blue-gray"
+              >
+                Working with us is a pleasure
+              </Typography>
+              <Typography className="mb-8 font-normal text-blue-gray-500">
+                Don't let your uses guess by attaching tooltips and popoves to
+                any element. Just make sure you enable them first via
+                JavaScript.
+                <br />
+                <br />
+                The kit comes with three pre-built pages to help you get started
+                faster. You can change the text and images and you're good to
+                go. Just make sure you enable them first via JavaScript.
+              </Typography>
+              <Button variant="filled">read more</Button>
+            </div>
+            <div className="mx-auto mt-24 flex w-full justify-center px-4 md:w-4/12 lg:mt-0">
+              <Card className="shadow-lg border shadow-gray-500/10 rounded-lg">
+                <CardHeader floated={false} className="relative h-56">
+                  <img
+                    alt="Card Image"
+                    src="/img/teamwork.png"
+                    className="h-full w-full"
+                  />
+                </CardHeader>
+                <CardBody>
+                  <Typography variant="small" color="blue-gray" className="font-normal">Enterprise</Typography>
+                  <Typography
+                    variant="h5"
+                    color="blue-gray"
+                    className="mb-3 mt-2 font-bold"
+                  >
+                    Top Notch Services
+                  </Typography>
+                  <Typography className="font-normal text-blue-gray-500">
+                    The Arctic Ocean freezes every winter and much of the
+                    sea-ice then thaws every summer, and that process will
+                    continue whatever happens.
+                  </Typography>
+                </CardBody>
+              </Card>
+            </div>
+          </div> */}
+        </div>
+      </section>
+      <div >
+            <CariDomain />
+      </div>
+      <div>
+        <Desain />
+      </div>
+      <div>
+        <Harga />
       </div>
       <div>
         <HubungiKami />

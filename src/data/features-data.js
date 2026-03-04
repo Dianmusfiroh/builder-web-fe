@@ -1,28 +1,28 @@
 import {
-  ChatBubbleBottomCenterTextIcon,
+  ServerIcon,DevicePhoneMobileIcon,ChatBubbleBottomCenterTextIcon
 } from "@heroicons/react/24/solid";
 
 export const featuresData = [
   {
     color: "gray",
-    title: "Awarded Agency",
-    icon: ChatBubbleBottomCenterTextIcon,
+    title: "Hosting & Domain",
+    icon: ServerIcon,
     description:
-      "Divide details about your product or agency work into parts. A paragraph describing a feature will be enough.",
+      "SSL & Hosting 1 Tahun + Domain .com/.id 1 Tahun. Kami pastikan website Anda cepat, aman, dan selalu online dengan hosting berkualitas dan domain yang mudah diingat.",
   },
   {
     color: "gray",
-    title: "Free Revisions",
-    icon: ChatBubbleBottomCenterTextIcon,
+    title: "SEO & Mobile-Ready",
+    icon: DevicePhoneMobileIcon,
     description:
-      "Keep you user engaged by providing meaningful information. Remember that by this time, the user is curious.",
+      "Website Anda dioptimalkan untuk SEO dan responsif di semua perangkat, sehingga mudah diakses calon jamaah kapan saja.",
   },
   {
     color: "gray",
-    title: "Verified Company",
-    icon: ChatBubbleBottomCenterTextIcon,
+    title: "Konsultasi & Support",
+    icon:  ChatBubbleBottomCenterTextIcon,
     description:
-      "Write a few lines about each one. A paragraph describing a feature will be enough. Keep you user engaged!",
+      "Kami menyediakan konsultasi gratis dan dukungan teknis untuk memastikan website Anda berjalan optimal.",
   },
 ];
 

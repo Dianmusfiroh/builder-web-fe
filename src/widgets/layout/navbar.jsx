@@ -23,9 +23,7 @@ export function Navbar({ brandName, routes, action, isDarkText }) {
   const navList = (
     <ul className="mb-4 mt-2 flex flex-col gap-2 text-inherit lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
       {routes.map(({ name, path, icon, href, target }) => {
-        const itemClass = `flex items-center gap-1 p-1 font-bold ${
-          isDarkText ? "text-black" : ""
-        }`;
+        const itemClass = `flex items-center gap-1 p-1 font-bold text-black`;
 
         return (
           <Typography
@@ -60,9 +58,9 @@ export function Navbar({ brandName, routes, action, isDarkText }) {
 
   return (
     <MTNavbar color="transparent" className="p-3">
-      <div className="container mx-auto flex items-center  justify-between text-white">
+      <div className="container mx-auto flex items-center  justify-between text-black">
         <Link to="/">
-          <Typography className={`mr-4 ml-2 cursor-pointer py-1.5 font-bold ${isDarkText ? "text-black" : ""}`}>
+          <Typography className="mr-4 ml-2 cursor-pointer py-1.5 font-bold text-black">
             {brandName}
           </Typography>
         </Link>
@@ -81,7 +79,7 @@ export function Navbar({ brandName, routes, action, isDarkText }) {
         <IconButton
           variant="text"
           size="sm"
-          color="white"
+          color="black"
           className="ml-auto text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
           onClick={() => setOpenNav(!openNav)}
         >
@@ -117,7 +115,12 @@ export function Navbar({ brandName, routes, action, isDarkText }) {
 }
 
 Navbar.defaultProps = {
-  brandName: "web builder",
+  brandName: (
+    <div className="flex items-center gap-2">
+      <img src="/img/logo3.png" alt="Mitrascale" className="h-6 w-auto" />
+      <span className="font-bold text-black"></span>
+    </div>
+  ),
   action: (
     <a
       href="https://wa.me/6282296973952/?text=Saya%20tertarik%20untuk%20membuat%20website"

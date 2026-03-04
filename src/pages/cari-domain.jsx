@@ -39,34 +39,30 @@ export function CariDomain() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white py-12 px-4">
-      <div className="container mx-auto max-w-4xl">
-        <div className="text-center mt-24 mb-12">
-          <h2 className="text-4xl font-bold mb-4">Cari Domain</h2>
-          <p className="text-gray-600 text-lg">
-            Temukan dan daftarkan domain impian Anda
-          </p>
-        </div>
-
+      <div className="">
         {/* Search Form */}
-        <Card className="mb-12 shadow-lg">
-          <CardBody className="p-8">
-            <form onSubmit={handleSearch} className="flex flex-col sm:flex-row gap-4">
-              <Input
-                type="text"
-                label="Nama Domain"
-                placeholder="contoh: webbuilder"
-                value={searchInput}
-                onChange={(e) => setSearchInput(e.target.value)}
-                className="flex-1"
-              />
+        <Card className="shadow-lg w-1/2 max-w-2xl mx-auto">
+          <CardBody className="p-8 ">
+            <form onSubmit={handleSearch} className="flex flex-col sm:flex-row gap-4 items-end">
+              <div className="flex-1">
+                <Input
+                  type="text"
+                  label="Masukkan Nama Domain, Contoh: example.com"
+                  value={searchInput}
+                  onChange={(e) => setSearchInput(e.target.value)}
+                  className="w-full"
+                  size="lg"
+                />
+              </div>
               <Button
                 type="submit"
                 variant="gradient"
                 color="blue"
-                className="sm:w-auto"
+                className="sm:w-auto px-8 py-3"
+                size="lg"
+                fullWidth
               >
-                Cari
+                Cek Domain
               </Button>
             </form>
           </CardBody>
@@ -75,7 +71,7 @@ export function CariDomain() {
         {/* Search Results */}
         {searched && (
           <div>
-            <h3 className="text-2xl font-bold mb-6">Hasil Pencarian untuk "{searchInput}"</h3>
+            <h3 className="text-2xl font-bold ">Hasil Pencarian untuk "{searchInput}"</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {results.map((result) => (
                 <Card
@@ -157,14 +153,13 @@ export function CariDomain() {
         )}
 
         {!searched && (
-          <div className="text-center text-gray-500 py-12">
+          <div className="text-center text-gray-500 py-5">
             <Typography className="text-lg">
-              Mulai dengan memasukkan nama domain yang ingin Anda cari
+              Termasuk Domain, Hosting, dan SSL 1 tahun
             </Typography>
           </div>
         )}
       </div>
-    </div>
   );
 }
 

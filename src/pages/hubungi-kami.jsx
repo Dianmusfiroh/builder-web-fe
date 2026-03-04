@@ -3,9 +3,9 @@ import { Button, Input, Textarea } from "@material-tailwind/react";
 import { Footer } from "@/widgets/layout";
 
 const footerData = {
-  title: "Web Builder",
+  title: "Mitrascale",
   description:
-    "Bangun website impian Anda dengan mudah menggunakan platform Web Builder kami.",
+    "Bangun website impian Anda dengan mudah lewat Mitrascale.",
   socials: [
     {
       color: "blue",
@@ -14,13 +14,13 @@ const footerData = {
     },
     {
       color: "light-blue",
-      name: "twitter",
-      path: "https://www.twitter.com",
+      name: "@",
+      path: "https://www.threads.com/@mitra_scale",
     },
     {
       color: "pink",
       name: "instagram",
-      path: "https://www.instagram.com",
+      path: "https://www.instagram.com/mitra_scale/",
     },
   ],
   menus: [
@@ -41,7 +41,7 @@ const footerData = {
       ],
     },
   ],
-  copyright: "Copyright © 2026 Web Builder. All rights reserved.",
+  copyright: "Copyright © 2026 Mitrascale. All rights reserved.",
 };
 
 export function HubungiKami() {
@@ -52,6 +52,7 @@ export function HubungiKami() {
     subject: "",
     message: "",
   });
+  const [showModal, setShowModal] = React.useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -63,7 +64,17 @@ export function HubungiKami() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
+    
+    // Format message
+    const message = `Nama: ${formData.name}%0AEmail: ${formData.email}%0ANo Telepon: ${formData.phone}%0ASubjek: ${formData.subject}%0APesan: ${formData.message}`;
+    
+    // WhatsApp number (format: 62xxxxxxxxxx without + or space)
+    const whatsappNumber = "62123456789";
+    
+    // Open WhatsApp
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${message}`;
+    window.open(whatsappUrl, "_blank");
+    
     // Reset form
     setFormData({
       name: "",
@@ -72,12 +83,12 @@ export function HubungiKami() {
       subject: "",
       message: "",
     });
-    alert("Terima kasih! Pesan Anda telah dikirim.");
+    setShowModal(true);
   };
 
   return (
     <>
-      <div className="min-h-screen bg-gray-50 py-12 px-4">
+      <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white py-12 px-4">
       <div className="container mx-auto max-w-4xl">
         <div className="text-center mb-12">
           <h2 className="text-4xl mt-24 font-bold mb-4">Hubungi Kami</h2>
@@ -107,14 +118,14 @@ export function HubungiKami() {
                   <div>
                     <h4 className="font-semibold mb-1">Email</h4>
                     <p className="text-gray-600">
-                      <a href="mailto:info@webbuilder.id" className="hover:text-blue-600">
-                        info@webbuilder.id
+                      <a href="mailto:mitrascalearea@gmail.com" className="hover:text-blue-600">
+                        mitrascalearea@gmail.com
                       </a>
                     </p>
                   </div>
                 </div>
 
-                <div className="flex gap-4">
+                {/* <div className="flex gap-4">
                   <div className="text-blue-600 text-2xl">📱</div>
                   <div>
                     <h4 className="font-semibold mb-1">Telepon</h4>
@@ -124,7 +135,7 @@ export function HubungiKami() {
                       </a>
                     </p>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
@@ -200,6 +211,30 @@ export function HubungiKami() {
         </div>
       </div>
     </div>
+
+      {/* Success Modal */}
+      {showModal && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+          <div className="bg-white rounded-lg shadow-lg p-8 max-w-sm w-full animate-in">
+            <div className="text-center">
+              <div className="text-4xl mb-4">✅</div>
+              <h3 className="text-2xl font-bold mb-4 text-gray-800">Terima Kasih!</h3>
+              <p className="text-gray-600 mb-6">
+                Pesan Anda akan dikirim ke WhatsApp kami. Tim kami akan segera merespons.
+              </p>
+              <Button
+                variant="gradient"
+                color="blue"
+                fullWidth
+                onClick={() => setShowModal(false)}
+              >
+                Tutup
+              </Button>
+            </div>
+          </div>
+        </div>
+      )}
+
       <Footer
         title={footerData.title}
         description={footerData.description}
