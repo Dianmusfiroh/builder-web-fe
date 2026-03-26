@@ -3,23 +3,25 @@ import { DesignCard } from "@/widgets/cards";
 
 const designs = [
   {
-    title: "Landing Page Modern",
-    image: "/img/background-1.jpg",
-    description: "Desain landing page yang bersih dan profesional.",
-    category: "Landing",
+    // title: "Landing Page Modern",
+    image: "/img/app-mitra.png",
+    // description: "Desain landing page yang bersih dan profesional.",
+    // category: "Landing",
+    href: "https://app.mitrascale.com/",
   },
-  {
-    title: "Portfolio Kreatif",
-    image: "/img/background-2.jpg",
-    description: "Template portofolio untuk menampilkan karya terbaik.",
-    category: "Portfolio",
-  },
-  {
-    title: "Tampilan Produk",
-    image: "/img/background-3.png",
-    description: "Layout produk dengan fokus pada visual.",
-    category: "Product",
-  },
+  
+  // {
+  //   title: "Portfolio Kreatif",
+  //   image: "/img/background-2.jpg",
+  //   description: "Template portofolio untuk menampilkan karya terbaik.",
+  //   category: "Portfolio",
+  // },
+  // {
+  //   title: "Tampilan Produk",
+  //   image: "/img/background-3.png",
+  //   description: "Layout produk dengan fokus pada visual.",
+  //   category: "Product",
+  // },
  
 ];
 
@@ -35,10 +37,10 @@ export function Desain() {
     selected === "All" ? designs : designs.filter((d) => d.category === selected);
 
   return (
-    <div className="container mx-auto px-4  ">
-      <h2 className="text-3xl mt-20 font-bold mb-4">Kumpulan Desain</h2>
+    <div className="container mx-auto px-4 flex flex-col items-center">
+      <h2 className="text-3xl mt-20 font-bold mb-4 text-center">Kumpulan Desain</h2>
 
-      <div className="mb-6 flex flex-wrap gap-2">
+      <div className="mb-6 flex flex-wrap gap-2 justify-center">
         {categories.map((cat) => (
           <button
             key={cat}
@@ -54,14 +56,15 @@ export function Desain() {
         ))}
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-6xl">
         {filtered.map((d, i) => (
           <DesignCard
             key={i}
-            title={d.title}
+            // title={d.title}
             image={d.image}
-            description={d.description}
+            // description={d.description}
             category={d.category}
+            href={d.href}
           />
         ))}
       </div>

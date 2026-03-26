@@ -72,20 +72,7 @@ export function Home() {
                 className="mx-1 font-black text-5xl lg:text-5xl text-center"
               >
                 Temukan Desain 
-              </Typography>
-            
-              <Typography
-                variant="h1"
-                color="blue"
-                className="mx-1 font-blue text-5xl lg:text-5xl text-center"
-              >
-                Website Umroh
-              </Typography>
-              <Typography
-                variant="h1"
-                color="black"
-                className="mx-1 font-black text-5xl lg:text-5xl text-center"
-              >
+                <span className="text-blue-600"> Website Umroh </span>  
                 Terbaikmu
               </Typography>
             </div>

@@ -41,10 +41,10 @@ export function CariDomain() {
   return (
       <div className="">
         {/* Search Form */}
-        <Card className="shadow-lg w-1/2 max-w-2xl mx-auto">
+        <Card className="shadow-lg w-full max-w-2xl mx-auto px-4 sm:px-0 sm:w-1/2">
           <CardBody className="p-8 ">
-            <form onSubmit={handleSearch} className="flex flex-col sm:flex-row gap-4 items-end">
-              <div className="flex-1">
+            <form onSubmit={handleSearch} className="flex flex-col gap-4 items-center sm:flex-row sm:items-end sm:gap-4">
+              <div className="w-full sm:flex-1">
                 <Input
                   type="text"
                   label="Masukkan Nama Domain, Contoh: example.com"
@@ -58,7 +58,7 @@ export function CariDomain() {
                 type="submit"
                 variant="gradient"
                 color="blue"
-                className="sm:w-auto px-8 py-3"
+                className="w-full sm:w-auto px-8 py-3"
                 size="lg"
                 fullWidth
               >
@@ -88,7 +88,7 @@ export function CariDomain() {
                         <Typography variant="h5" className="font-bold mb-2">
                           {result.domain}
                         </Typography>
-                        <Typography className="text-sm text-gray-100">
+                        <Typography className="text-sm text-gray-600">
                           {result.available ? "Tersedia" : "Tidak Tersedia"}
                         </Typography>
                       </div>
