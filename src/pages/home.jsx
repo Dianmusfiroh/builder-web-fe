@@ -26,33 +26,33 @@ export function Home() {
           <div className="flex flex-wrap items-center">
             <div className="ml-auto mr-auto w-full text-center ">
               <Typography
-                variant="h4"
+                variant="h1"
                 color="black"
                 className="mb-6 "
               >
-                Website  Travel Umroh
+                Bangun Website Travel Umroh
               </Typography>
-              <Typography
+              {/* <Typography
                 variant="h1"
                 color="black"
                 className="font-black text-5xl lg:text-7xl px-8 py-2 w-full leading-loose"
               >
-                Bangun Website Travel Umroh:
-              </Typography>
-                <Typography
+              </Typography> */}
+                {/* <Typography
                 variant="h1"
                 color="black"
                 className="font-black text-5xl lg:text-7xl px-8 py-2 w-full leading-loose"
               >
                 Dirancang Khusus untuk
-              </Typography>
-              <Typography
+              </Typography> */}
+              {/* <Typography
                 variant="h1"
                 color="black"
                 className="font-black mb-5 text-5xl lg:text-7xl px-8 py-2 w-full leading-loose"
               >
                 Mendapatkan Jamaah     
-              </Typography>
+              </Typography> */}
+              < br />
               <Typography variant="lead" color="black" className="opacity-80">
                 Mulai dari Rp 300.000/bulan atau <br />
                 Rp 1.500.000/tahun
@@ -71,8 +71,8 @@ export function Home() {
                 color="black"
                 className="mx-1 font-black text-5xl lg:text-5xl text-center"
               >
-                Temukan Desain 
-                <span className="text-blue-600"> Website Umroh </span>  
+                Temukan Desain <br className="sm:hidden" />
+                <span className="text-blue-600"> Website Umroh </span> <br className="sm:hidden" />
                 Terbaikmu
               </Typography>
             </div>
