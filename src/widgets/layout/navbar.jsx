@@ -101,9 +101,6 @@ export function Navbar({ brandName, routes, action, isDarkText }) {
             target="_blank"
             className="mb-2 block"
           >
-            <Button variant="text" size="sm" fullWidth>
-              pro version
-            </Button>
           </a>
           {React.cloneElement(action, {
             className: "w-full block opacity-50",
