@@ -5,7 +5,7 @@ import routes from "@/routes";
 
 function App() {
   const { pathname } = useLocation();
-  const isDarkNavbar = pathname !== '/home';
+  const isDarkNavbar = pathname !== '/';
 
   return (
     <>
@@ -20,7 +20,7 @@ function App() {
           ({ path, element }, key) =>
             element && <Route key={key} exact path={path} element={element} />
         )}
-        <Route path="*" element={<Navigate to="/home" replace />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </>
   );

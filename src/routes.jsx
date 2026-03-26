@@ -3,7 +3,7 @@ import { Home, Profile, SignIn, SignUp, Desain, Harga, HubungiKami, CariDomain }
 export const routes = [
   {
     // name: "home",
-    path: "/home",
+    path: "/",
     element: <Home />,
   },
   //  {
