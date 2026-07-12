@@ -21,8 +21,8 @@ export function Navbar({ brandName, routes, action, isDarkText }) {
   }, []);
 
   const navList = (
-    <ul className="mb-4 mt-2 flex flex-col gap-2 text-inherit lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
-      {routes.map(({ name, path, icon, href, target }) => {
+    <ul className="mb-4 mt-0 flex flex-col gap-2 text-inherit lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
+      {routes.filter(({ hidden, name }) => !hidden && name).map(({ name, path, icon, href, target }) => {
         const itemClass = `flex items-center gap-1 p-1 font-bold text-black`;
 
         return (
@@ -113,8 +113,8 @@ export function Navbar({ brandName, routes, action, isDarkText }) {
 
 Navbar.defaultProps = {
   brandName: (
-    <div className="flex items-center gap-2">
-      <img src="/img/logo3.png" alt="Mitrascale" className="h-6 w-auto" />
+    <div className="flex items-center gap-1">
+      <img src="/img/logo4.png" alt="Mitrascale" className="h-20 w-auto" />
       <span className="font-bold text-black"></span>
     </div>
   ),

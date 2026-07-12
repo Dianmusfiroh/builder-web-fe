@@ -6,11 +6,13 @@ import routes from "@/routes";
 function App() {
   const { pathname } = useLocation();
   const isDarkNavbar = pathname !== '/';
+  const isAuthPage = pathname === '/sign-in' || pathname === '/sign-up';
+  const isAdminPage = pathname.startsWith('/admin');
 
   return (
     <>
-      {!(pathname == '/sign-in' || pathname == '/sign-up') && (
-        <div className="container absolute left-2/4 z-10 mb-24 mx-auto -translate-x-2/4 p-4">
+      {!isAuthPage && !isAdminPage && (
+        <div className="container absolute -top-4 left-2/4 z-10 mx-auto -translate-x-2/4 p-3">
           <Navbar routes={routes} isDarkText={isDarkNavbar} />
         </div>
       )

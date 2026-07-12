@@ -1,10 +1,43 @@
-import { Home, Profile, SignIn, SignUp, Desain, Harga, HubungiKami, CariDomain } from "@/pages";
+import {
+  AdminDashboard,
+  AdminScrapperProducts,
+  AdminScrapperUserAdd,
+  AdminScrapperUserDetail,
+  Home,
+  Profile,
+  SignIn,
+  SignUp,
+  Desain,
+  Harga,
+  HubungiKami,
+  CariDomain,
+} from "@/pages";
 
 export const routes = [
   {
     // name: "home",
     path: "/",
     element: <Home />,
+  },
+  {
+    path: "/admin/dashboard",
+    element: <AdminDashboard />,
+    hidden: true,
+  },
+  {
+    path: "/admin/scrapper/products",
+    element: <AdminScrapperProducts />,
+    hidden: true,
+  },
+  {
+    path: "/admin/scrapper/users/add",
+    element: <AdminScrapperUserAdd />,
+    hidden: true,
+  },
+  {
+    path: "/admin/scrapper/users/:id",
+    element: <AdminScrapperUserDetail />,
+    hidden: true,
   },
   //  {
   //   name: "cari domain",

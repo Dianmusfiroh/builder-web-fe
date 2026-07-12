@@ -6,3 +6,8 @@ export * from "@/pages/desain";
 export * from "@/pages/harga";
 export * from "@/pages/hubungi-kami";
 export * from "@/pages/cari-domain";
+export * from "@/pages/admin-login";
+export * from "@/pages/admin-dashboard";
+export * from "@/pages/admin-scrapper-products";
+export * from "@/pages/admin-scrapper-user-add";
+export * from "@/pages/admin-scrapper-user-detail";
